@@ -6,8 +6,6 @@
 
         public string FixedText { get; set; }
 
-        public int Status { get; set; }
-
         public string ErrorMessage  { get; set; }
 
         public DateTimeOffset Timestamp => DateTimeOffset.Now;

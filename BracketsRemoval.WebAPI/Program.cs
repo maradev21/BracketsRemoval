@@ -23,13 +23,12 @@ app.MapPost("/bracketsRemoval", (Request request) =>
 {
     try
     {
-        string result = BracketsService.RemoveExtraBrackets(request.OriginalText);
+        string result = BracketsService.RemoveExternalBrackets(request.OriginalText);
         var response = new Response
         {
             FixedText = result,
             Request = request,
-            ErrorMessage = string.Empty,
-            Status = 200
+            ErrorMessage = string.Empty
         };
         return response;
     }
@@ -39,10 +38,10 @@ app.MapPost("/bracketsRemoval", (Request request) =>
         {
             FixedText = string.Empty,
             Request = request,
-            ErrorMessage = ex.Message,
-            Status = 500
+            ErrorMessage = ex.Message
         };
     }
+
 });
 
 app.Run();

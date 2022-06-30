@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BracketsRemoval", "Brackets
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{B95D8E29-BF90-4B47-9820-51189A7E8DEA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BracketsRemoval.API", "BracketsRemoval.API\BracketsRemoval.API.csproj", "{F9E9D774-2607-4470-BC75-A3AEE9134402}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BracketsRemoval.WebAPI", "BracketsRemoval.WebAPI\BracketsRemoval.WebAPI.csproj", "{D123F49C-7774-4EB6-AFF5-5841092AD563}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BracketsRemoval.WebAPI", "BracketsRemoval.WebAPI\BracketsRemoval.WebAPI.csproj", "{D123F49C-7774-4EB6-AFF5-5841092AD563}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{B95D8E29-BF90-4B47-9820-51189A7E8DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B95D8E29-BF90-4B47-9820-51189A7E8DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B95D8E29-BF90-4B47-9820-51189A7E8DEA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9E9D774-2607-4470-BC75-A3AEE9134402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9E9D774-2607-4470-BC75-A3AEE9134402}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9E9D774-2607-4470-BC75-A3AEE9134402}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9E9D774-2607-4470-BC75-A3AEE9134402}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D123F49C-7774-4EB6-AFF5-5841092AD563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D123F49C-7774-4EB6-AFF5-5841092AD563}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D123F49C-7774-4EB6-AFF5-5841092AD563}.Release|Any CPU.ActiveCfg = Release|Any CPU
