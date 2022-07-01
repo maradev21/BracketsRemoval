@@ -20,7 +20,7 @@ namespace Tests
         [InlineData("(a(b(c)))", "a(b(c))")]
         //[InlineData("((abc)", "(abc")]
         //[InlineData("(((a(b(c))(d))", "a(b(c))(d)")]
-        public void Pixart(string input, string expected)
+        public void Should_ReturnCorrectResult(string input, string expected)
         {
             string result = BracketsService.RemoveExternalBrackets(input);
             result.Should().BeEquivalentTo(expected);
