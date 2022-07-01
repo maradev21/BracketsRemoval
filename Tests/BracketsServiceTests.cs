@@ -2,7 +2,7 @@ using Xunit;
 using FluentAssertions;
 using BracketsRemoval;
 
-namespace Tests
+namespace Tests     // just a comment
 {
     public class BracketsServiceTests
     {
