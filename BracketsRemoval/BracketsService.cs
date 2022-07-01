@@ -40,37 +40,48 @@
                 return input;
         }
 
-        public static string RemoveExternalBrackets(string input)
+        /// <summary>
+        /// Removes the useless external brackets from the passed string.
+        /// </summary>
+        /// <param name="dirtyText">The input string, to be cleaned.</param>
+        /// <returns></returns>
+        public static string RemoveExternalBrackets(string dirtyText)
         {
-            string result = input;
+            string cleanText = dirtyText;
 
-            while (!string.IsNullOrEmpty(result)
-                && result[0] == '('
-                && result[^1] == ')')
+            while (!string.IsNullOrEmpty(cleanText)
+                && cleanText[0] == '('                  // the first character is an open bracket
+                && cleanText[^1] == ')')                // the last character is a closed bracket
             {
-                int index = FindClosingBracket(result);
+                int index = FindClosingBracket(cleanText);
 
-                if (index == result.Length - 1)
-                    result = result[1..^1];
+                if (index == cleanText.Length - 1)      // the corresponding bracket is the last one
+                    cleanText = cleanText[1..^1];       // first and last characters are removed
                 else
                     break;
             }
 
-            return result;
+            return cleanText;
         }
 
-        private static int FindClosingBracket(string input)
+        /// <summary>
+        /// Finds the closing bracket corresponding to the first open one.
+        /// </summary>
+        /// <param name="text">The input string, containing brackets.</param>
+        /// <returns></returns>
+        /// <exception cref="System.InvalidOperationException">There is no closing bracket associated to the first open bracket: the string is pathological.</exception>
+        private static int FindClosingBracket(string text)
         {
-            int counter = 1;
+            int bracketCounter = 1;
 
-            for (int i = 1; i < input.Length; i++)
+            for (int i = 1; i < text.Length; i++)
             {
-                if (input[i] == '(')
-                    counter++;
-                else if (input[i] == ')')
+                if (text[i] == '(')
+                    bracketCounter++;
+                else if (text[i] == ')')
                 {
-                    counter--;
-                    if (counter == 0)
+                    bracketCounter--;
+                    if (bracketCounter == 0)
                         return i;
                 }
             }

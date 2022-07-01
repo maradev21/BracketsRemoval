@@ -23,25 +23,14 @@ app.MapPost("/bracketsRemoval", (Request request) =>
 {
     try
     {
-        string result = BracketsService.RemoveExternalBrackets(request.OriginalText);
-        var response = new Response
-        {
-            FixedText = result,
-            Request = request,
-            ErrorMessage = string.Empty
-        };
+        string result = BracketsService.RemoveExternalBrackets(request.DirtyText);
+        var response = new Response(request, result);
         return response;
     }
     catch (Exception ex)
     {
-        return new Response
-        {
-            FixedText = string.Empty,
-            Request = request,
-            ErrorMessage = ex.Message
-        };
+        return new Response(request, ex);
     }
-
 });
 
 app.Run();
