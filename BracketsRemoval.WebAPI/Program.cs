@@ -27,7 +27,7 @@ app.MapPost("/bracketsRemoval", (Request request) =>
         var response = new Response(request, result);
         return response;
     }
-    catch (Exception ex)
+    catch (PathologicalBracketsException ex)
     {
         return new Response(request, ex);
     }
