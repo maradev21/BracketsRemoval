@@ -2,7 +2,7 @@
 
 This repository contains my solution for external brackets removal. The main code (containing the core logic) can be found inside `BracketsRemoval` project, while `BracketsRemoval.WebAPI` just exposes this functionality via HTTP.
 
-# Usage
+# Run the API
 
 ## Swagger (debug)
 
@@ -12,16 +12,22 @@ As an alternative, you can call the API through any client using the structures 
 
 ## Docker
 
-This solution is released as docker image on docker hub. To install it, run the following commands:
+This solution is released as docker image on docker hub. To install and run it, run the following commands:
 
 ```
 docker pull maradev21/bracketsremoval
 docker run -p [yourPort]:5000 maradev21/bracketsremoval
 ```
 
-# Data structure
+# Usage
+
+Regardless of the deploying technology, the API can be reached at the following endpoint with a POST request: `http://[yourMachine]:[yourPort]/bracketsRemoval`.
+
+`[yourPort]` corresponds to the port specified in the `docker run` command. By default at debug time, it is 5000.
 
 ## Request
+
+The POST request has to follow this structure, where `dirtyText` contains the text with the extra brackets to be removed and `timestamp` represents the time of when the request is performed:
 
 ```json
 {
@@ -31,6 +37,8 @@ docker run -p [yourPort]:5000 maradev21/bracketsremoval
 ```
 
 ## Response
+
+The returned response follows this structure:
 
 ```json
 {
@@ -44,6 +52,8 @@ docker run -p [yourPort]:5000 maradev21/bracketsremoval
 }
 ```
 
+`request` is the received request to which this response is associated, while `cleanText` is the returned text without extra brackets. `errorMessage` is set only when pathological inputs are provided, to explain why the passed `dirtyText` cannot be processed. In those cases, `cleanText` is empty, as in the following example:
+
 ```json
 {
   "request": {
@@ -55,3 +65,5 @@ docker run -p [yourPort]:5000 maradev21/bracketsremoval
   "timestamp": "2022-07-04T12:00:00.500Z"
 }
 ```
+
+As it happens for the request, response's `timestamp` represents the time at which the response is generated.
