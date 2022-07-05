@@ -35,6 +35,5 @@ namespace Tests
             Action action = () => BracketsService.RemoveExternalBrackets(pathologicalText);
             action.Should().Throw<PathologicalBracketsException>();
         }
-
     }
 }
